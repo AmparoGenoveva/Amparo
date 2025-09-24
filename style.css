@@ -1,4 +1,99 @@
-/* --- Grid con tamaños proporcionales --- */
+/* General */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* Header */
+header {
+  padding: 25px 40px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #999;
+}
+
+/* Main container */
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 30px;
+}
+
+/* Section titles */
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  letter-spacing: 0.5px;
+  color: #222;
+}
+
+/* Grid for artworks */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.grid figure {
+  margin: 0;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.grid img:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+figcaption .serie {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Tamaños proporcionales */
 .size-a4 {
   aspect-ratio: 210 / 297; /* A4 */
   object-fit: cover;
@@ -12,6 +107,16 @@
 .size-50x70 {
   aspect-ratio: 500 / 700; /* Acrílico grande */
   object-fit: cover;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #eee;
+  margin-top: 60px;
+  font-size: 0.85rem;
+  color: #777;
 }
 
 /* --- Lightbox --- */
@@ -34,7 +139,7 @@
   box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
-#lightbox:target {
+#lightbox.active {
   display: flex;
   animation: fadeIn 0.3s ease;
 }

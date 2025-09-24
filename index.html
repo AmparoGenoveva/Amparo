@@ -1,191 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Amparo: Rituales de bienestar</title>
-
-  <!-- Estilos: layout, proporciones y lightbox -->
-  <style>
-    /* --- Base / tipografía --- */
-    :root {
-      --content-max: 1100px;
-      --muted: #777;
-      --line: #eee;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: #fff;
-      color: #111;
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    /* --- Header / navegación --- */
-    header {
-      padding: 24px 32px;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    header h1 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 0;
-      letter-spacing: 0.6px;
-    }
-    nav {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-    }
-    nav a {
-      text-decoration: none;
-      color: #111;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color .22s ease;
-    }
-    nav a:hover { color: #999; }
-
-    /* --- Contenedor principal --- */
-    main {
-      max-width: var(--content-max);
-      margin: 0 auto;
-      padding: 48px 24px;
-    }
-    h2 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin: 0 0 18px 0;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 8px;
-      color: #222;
-      letter-spacing: 0.4px;
-    }
-
-    /* --- Grid de obras --- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-      margin-bottom: 44px;
-    }
-
-    /* Cada figura actúa como contenedor con aspecto proporcional */
-    figure {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: stretch;
-    }
-
-    /* Clases de proporción aplicadas al figure */
-    figure.size-a4 { aspect-ratio: 210 / 297; overflow: hidden; }
-    figure.size-a5 { aspect-ratio: 148 / 210; overflow: hidden; }
-    figure.size-50x70 { aspect-ratio: 500 / 700; overflow: hidden; }
-
-    /* Imagen ocupa todo el figure y se recorta (object-fit) */
-    figure img.artwork {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .28s ease, opacity .22s ease;
-      cursor: pointer;
-    }
-    figure img.artwork:hover { transform: scale(1.02); opacity: 0.96; }
-
-    figcaption {
-      font-size: 0.93rem;
-      color: #444;
-      line-height: 1.35;
-    }
-    figcaption .serie { font-style: italic; color: var(--muted); font-size: 0.88rem; display:block; margin-top:4px; }
-
-    /* --- Footer --- */
-    footer {
-      text-align: center;
-      padding: 34px 18px;
-      border-top: 1px solid var(--line);
-      margin-top: 60px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    /* --- Lightbox --- */
-    #lightbox {
-      position: fixed;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      background: rgba(0,0,0,0.92);
-      z-index: 9999;
-      padding: 20px;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity .22s ease, visibility .22s ease;
-    }
-    #lightbox.open { opacity: 1; visibility: visible; }
-
-    #lightbox .content {
-      width: 100%;
-      max-width: 1100px;
-      max-height: 92vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      position: relative;
-    }
-    #lightbox img {
-      max-width: 100%;
-      max-height: 80vh;
-      object-fit: contain;
-      display: block;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-      background: #000;
-    }
-    #lightbox .caption {
-      color: #f1f1f1;
-      font-size: 0.95rem;
-      text-align: center;
-      max-width: 95%;
-    }
-    #lightbox .close {
-      position: absolute;
-      right: -8px;
-      top: -8px;
-      background: #fff;
-      border: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      font-size: 20px;
-      line-height: 1;
-      cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-    }
-    @media (max-width: 520px) {
-      header { padding: 18px; }
-      main { padding: 28px 16px; }
-      nav { gap: 10px; }
-      figure.size-50x70 { aspect-ratio: 5 / 7; } /* keep responsive on very small screens */
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amparo: Rituales de Bienestar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Amparo: Rituales de bienestar</h1>
+    <h1>Amparo: Rituales de Bienestar</h1>
     <nav>
-      <a href="#cera">Ceras</a>
-      <a href="#acrilico">Acrílico</a>
+      <a href="#cera">Ceras sobre papel</a>
+      <a href="#acrilico">Acrílico y aerógrafo</a>
       <a href="#acuarela">Acuarela</a>
       <a href="#carbon">Carboncillo</a>
       <a href="#lapiz">Lápiz</a>
@@ -198,16 +24,15 @@
   <main>
     <!-- Ceras -->
     <section id="cera">
-      <h2>Ceras sobre papel (A5 - 148×210 mm)</h2>
+      <h2>Ceras sobre papel (A5 – 148×210 mm)</h2>
       <div class="grid">
-        <figure class="size-a5">
-          <img class="artwork" src="imagenes/Cera01.jpg" alt="Rostro en calma - Cera">
+        <figure>
+          <img src="imagenes/Cera01.jpg" alt="Retrato en cera" class="artwork size-a5">
           <figcaption>“Rostro en calma” – Cera sobre papel – 148×210 mm</figcaption>
         </figure>
-
-        <figure class="size-a5">
-          <img class="artwork" src="imagenes/Cera_Barjola.jpg" alt="Fragmento Barjola - Cera">
-          <figcaption>“Fragmento Barjola” – Cera sobre papel – 148×210 mm
+        <figure>
+          <img src="imagenes/Cera_Barjola.jpg" alt="Serie Barjola" class="artwork size-a5">
+          <figcaption>“Fragmento Barjola” – Cera sobre papel – 148×210 mm<br>
             <span class="serie">Serie inspirada en la Sala SOLO (Madrid)</span>
           </figcaption>
         </figure>
@@ -218,8 +43,8 @@
     <section id="acrilico">
       <h2>Acrílico y aerógrafo (500×700 mm)</h2>
       <div class="grid">
-        <figure class="size-50x70">
-          <img class="artwork" src="imagenes/Acrilico01.JPG" alt="Encuentro - Acrílico">
+        <figure>
+          <img src="imagenes/Acrilico01.JPG" alt="Acrílico" class="artwork size-50x70">
           <figcaption>“Encuentro” – Acrílico sobre lienzo – 500×700 mm</figcaption>
         </figure>
       </div>
@@ -227,25 +52,23 @@
 
     <!-- Acuarelas -->
     <section id="acuarela">
-      <h2>Acuarela (A4 - 210×297 mm)</h2>
+      <h2>Acuarela (A4 – 210×297 mm)</h2>
       <div class="grid">
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Acuarela_Matisse01.jpg" alt="Ecos de Matisse I">
-          <figcaption>“Ecos de Matisse I” – Acuarela – 210×297 mm
+        <figure>
+          <img src="imagenes/Acuarela_Matisse01.jpg" alt="Serie Matisse 1" class="artwork size-a4">
+          <figcaption>“Ecos de Matisse I” – Acuarela – 210×297 mm<br>
             <span class="serie">Serie inspirada en la Fundación Canal (Madrid)</span>
           </figcaption>
         </figure>
-
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Acuarela_Matisse02.jpg" alt="Ecos de Matisse II">
-          <figcaption>“Ecos de Matisse II” – Acuarela – 210×297 mm
+        <figure>
+          <img src="imagenes/Acuarela_Matisse02.jpg" alt="Serie Matisse 2" class="artwork size-a4">
+          <figcaption>“Ecos de Matisse II” – Acuarela – 210×297 mm<br>
             <span class="serie">Serie inspirada en la Fundación Canal (Madrid)</span>
           </figcaption>
         </figure>
-
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Acuarela_Matisse03.jpg" alt="Ecos de Matisse III">
-          <figcaption>“Ecos de Matisse III” – Acuarela – 210×297 mm
+        <figure>
+          <img src="imagenes/Acuarela_Matisse03.jpg" alt="Serie Matisse 3" class="artwork size-a4">
+          <figcaption>“Ecos de Matisse III” – Acuarela – 210×297 mm<br>
             <span class="serie">Serie inspirada en la Fundación Canal (Madrid)</span>
           </figcaption>
         </figure>
@@ -254,20 +77,18 @@
 
     <!-- Carboncillos -->
     <section id="carbon">
-      <h2>Carboncillo (A4 - 210×297 mm)</h2>
+      <h2>Carboncillo (A4 – 210×297 mm)</h2>
       <div class="grid">
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Carbon01.jpg" alt="Sombra y gesto I">
+        <figure>
+          <img src="imagenes/Carbon01.jpg" alt="Carboncillo 1" class="artwork size-a4">
           <figcaption>“Sombra y gesto I” – Carboncillo sobre papel – 210×297 mm</figcaption>
         </figure>
-
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Carbon02.jpg" alt="Sombra y gesto II">
+        <figure>
+          <img src="imagenes/Carbon02.jpg" alt="Carboncillo 2" class="artwork size-a4">
           <figcaption>“Sombra y gesto II” – Carboncillo sobre papel – 210×297 mm</figcaption>
         </figure>
-
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Carbon03.jpg" alt="Sombra y gesto III">
+        <figure>
+          <img src="imagenes/Carbon03.jpg" alt="Carboncillo 3" class="artwork size-a4">
           <figcaption>“Sombra y gesto III” – Carboncillo sobre papel – 210×297 mm</figcaption>
         </figure>
       </div>
@@ -275,25 +96,22 @@
 
     <!-- Lápiz -->
     <section id="lapiz">
-      <h2>Lápiz (A4 - 210×297 mm)</h2>
+      <h2>Lápiz (A4 – 210×297 mm)</h2>
       <div class="grid">
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Lapiz01.jpg" alt="Trazo íntimo I">
+        <figure>
+          <img src="imagenes/Lapiz01.jpg" alt="Lápiz 1" class="artwork size-a4">
           <figcaption>“Trazo íntimo I” – Lápiz sobre papel – 210×297 mm</figcaption>
         </figure>
-
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Lapiz02.jpg" alt="Trazo íntimo II">
+        <figure>
+          <img src="imagenes/Lapiz02.jpg" alt="Lápiz 2" class="artwork size-a4">
           <figcaption>“Trazo íntimo II” – Lápiz sobre papel – 210×297 mm</figcaption>
         </figure>
-
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Lapiz03.jpg" alt="Trazo íntimo III">
+        <figure>
+          <img src="imagenes/Lapiz03.jpg" alt="Lápiz 3" class="artwork size-a4">
           <figcaption>“Trazo íntimo III” – Lápiz sobre papel – 210×297 mm</figcaption>
         </figure>
-
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Lapiz04.jpg" alt="Trazo íntimo IV">
+        <figure>
+          <img src="imagenes/Lapiz04.jpg" alt="Lápiz 4" class="artwork size-a4">
           <figcaption>“Trazo íntimo IV” – Lápiz sobre papel – 210×297 mm</figcaption>
         </figure>
       </div>
@@ -301,11 +119,11 @@
 
     <!-- Pastel -->
     <section id="pastel">
-      <h2>Pastel (A4 - 210×297 mm)</h2>
+      <h2>Pastel (A4 – 210×297 mm)</h2>
       <div class="grid">
-        <figure class="size-a4">
-          <img class="artwork" src="imagenes/Pastel_Consuelo.jpg" alt="Retrato Consuelo">
-          <figcaption>“Retrato Consuelo” – Pastel sobre papel – 210×297 mm
+        <figure>
+          <img src="imagenes/Pastel_Consuelo.jpg" alt="Pastel Consuelo" class="artwork size-a4">
+          <figcaption>“Retrato Consuelo” – Pastel sobre papel – 210×297 mm<br>
             <span class="serie">Inspirado en la fotógrafa Consuelo Kanaga</span>
           </figcaption>
         </figure>
@@ -325,69 +143,15 @@
     <section id="contacto">
       <h2>Contacto</h2>
       <p>📧 <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></p>
-      <p>📷 <a href="https://instagram.com/tuperfil" target="_blank" rel="noopener">Instagram</a></p>
+      <p>📷 <a href="https://instagram.com/tuperfil" target="_blank">Instagram</a></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Amparo: Rituales de Bienestar</p>
+    <p>© 2025 Rituales de Bienestar</p>
   </footer>
 
-  <!-- Lightbox: el script está embebido aquí para que no necesites archivo extra -->
-  <div id="lightbox" aria-hidden="true" role="dialog">
-    <div class="content" role="document">
-      <button class="close" aria-label="Cerrar">✕</button>
-      <img src="" alt="">
-      <div class="caption"></div>
-    </div>
-  </div>
-
-  <script>
-    // Lightbox: abre imagen y usa la figcaption como texto
-    document.addEventListener("DOMContentLoaded", () => {
-      const images = document.querySelectorAll("img.artwork");
-      const lb = document.getElementById("lightbox");
-      const lbImg = lb.querySelector("img");
-      const lbCaption = lb.querySelector(".caption");
-      const lbClose = lb.querySelector(".close");
-
-      function openLightbox(src, caption) {
-        lbImg.src = src;
-        lbImg.alt = caption ? caption.replace(/<[^>]*>?/gm, '') : '';
-        lbCaption.innerHTML = caption || "";
-        lb.classList.add("open");
-        lb.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeLightbox() {
-        lb.classList.remove("open");
-        lb.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-        lbImg.src = "";
-        lbCaption.innerHTML = "";
-      }
-
-      images.forEach(img => {
-        img.addEventListener("click", (e) => {
-          const figure = img.closest("figure");
-          const captionEl = figure ? figure.querySelector("figcaption") : null;
-          const caption = captionEl ? captionEl.innerHTML : "";
-          // Abrir con la misma imagen (src) — si quieres versión grande distinta, usa data-src
-          openLightbox(img.src, caption);
-        });
-      });
-
-      // Cerrar clicando en el fondo o en la 'x'
-      lb.addEventListener("click", (e) => {
-        if (e.target === lb || e.target === lbClose) closeLightbox();
-      });
-
-      // Cerrar con Escape
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lb.classList.contains("open")) closeLightbox();
-      });
-    });
-  </script>
+  <!-- Aquí enlazas el JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

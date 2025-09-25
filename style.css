@@ -11,7 +11,7 @@ header {
   padding: 20px;
   border-bottom: 1px solid #ddd;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* antes estaba "center" */
   align-items: center;
 }
 
@@ -21,6 +21,7 @@ header h1 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-align: left; /* aseguramos que esté a la izquierda */
 }
 
 main {

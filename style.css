@@ -34,6 +34,7 @@ h2 {
   margin-bottom: 20px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
+  text-align: left;
 }
 
 /* Bio */
@@ -43,8 +44,10 @@ h2 {
   font-size: 1rem;
   line-height: 1.7;
   color: #333;
-  text-align: center;
-  font-style: italic;
+  text-align: left;
+  padding-left: 15px;
+  border-left: 3px solid #111; /* línea vertical elegante */
+  font-style: normal;
 }
 
 /* Grid general */
@@ -66,19 +69,17 @@ h2 {
   background: #fafafa;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
 }
 
 .card img {
   width: 100%;
-  height: 200px; /* mismo alto en miniaturas */
-  object-fit: cover; /* recorta para uniformidad */
-  transition: transform 0.3s ease;
+  height: 220px; /* altura fija */
+  object-fit: cover; /* recorte para uniformidad */
+  transition: transform 0.4s ease;
 }
 
 .card:hover img {
-  object-fit: contain; /* al pasar el ratón muestra la imagen entera */
-  background: #fff;
+  transform: scale(1.08); /* zoom sutil al pasar el ratón */
 }
 
 .card h3 {
@@ -86,7 +87,7 @@ h2 {
   padding: 15px;
   font-size: 1.1rem;
   font-weight: 500;
-  text-align: center;
+  text-align: left; /* alineado a la izquierda */
 }
 
 .card:hover {
@@ -142,5 +143,3 @@ footer {
   font-size: 0.9rem;
   color: #555;
 }
-
-
